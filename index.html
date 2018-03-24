@@ -1,74 +1,73 @@
-<div class="equalizer">
-  <div class="section">
-    <div class="title">HF</div>
-    <div class="sliders">
-      <div class="range-slider">
-        <span class="scope">22</span>
-        <input type="range" class="vertical" min="4700" max="22000" step="100" value="4700" data-filter="highShelf" data-param="frequency">
-        <span class="scope scope-min">4.7</span>
-        <span class="param">kHz</span>
-      </div>
-      <div class="range-slider">
-        <span class="scope">50</span>
-        <input type="range" class="vertical" min="-50" max="50" value="50" data-filter="highShelf" data-param="gain">
-        <span class="scope scope-min">-50</span>
-        <span class="param">dB</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="title">LF</div>
-    <div class="sliders">
-      <div class="range-slider">
-        <span class="scope">220</span>
-        <input type="range" class="vertical" min="35" max="220" step="1" value="35" data-filter="lowShelf" data-param="frequency">
-        <span class="scope scope-min">35</span>
-        <span class="param">Hz</span>
-      </div>
-      <div class="range-slider">
-        <span class="scope">50</span>
-        <input type="range" class="vertical" min="-50" max="50" value="50" data-filter="lowShelf" data-param="gain">
-        <span class="scope scope-min">-50</span>
-        <span class="param">dB</span>
+<html lang="en-US">
+  <head>
+    <title>Music Equalizer</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./css/styles.css"/>
+    <script type="text/javascript" src="./js/index.js" defer="defer"></script>
+  </head>
+  <body>
+  <div class="equalizer">
+    <div class="section">
+      <div class="sliders">
+        <div class="range-slider">
+          <span class="band">60</span>
+          <input type="range" oninput={_equalizer.handleChange(event)} class="vertical default" min="-60" max="60" value="0">
+          <span class="band band-range">-60</span>
+          <span class="param">Hz</span>
+        </div>
       </div>
     </div>
-  </div>
-
-  <div class="section">
-    <div class="title">HMF</div>
-    <div class="sliders">
-      <div class="range-slider">
-        <span class="scope">5.9</span>
-        <input type="range" class="vertical" min="800" max="5900" step="100" value="800" data-filter="highPass" data-param="frequency">
-        <span class="scope scope-min">0.8</span>
-        <span class="param">kHz</span>
-      </div>
-      <div class="range-slider">
-        <span class="scope">12</span>
-        <input type="range" class="vertical" min="0.7" max="12" step="0.1" value="0.7" data-filter="highPass" data-param="Q">
-        <span class="scope scope-min">0.7</span>
-        <span class="param">Q</span>
+    <div class="section">
+      <div class="sliders">
+        <div class="range-slider">
+          <span class="band">310</span>
+          <input type="range" oninput={_equalizer.handleChange(event)} class="vertical default" min="-310" max="310" value="0">
+          <span class="band band-range">-310</span>
+          <span class="param">Hz</span>
+        </div>
       </div>
     </div>
-  </div>
-
-  <div class="section">
-    <div class="title">LMF</div>
-    <div class="sliders">
-      <div class="range-slider">
-        <span class="scope">1600</span>
-        <input type="range" class="vertical" min="80" max="1600" step="10" value="880" data-filter="lowPass" data-param="frequency">
-        <span class="scope scope-min">80</span>
-        <span class="param">Hz</span>
-      </div>
-      <div class="range-slider">
-        <span class="scope">12</span>
-        <input type="range" class="vertical" min="0.7" max="12" step="0.1" value="0.7" data-filter="lowPass" data-param="Q">
-        <span class="scope scope-min">0.7</span>
-        <span class="param">Q</span>
+    <div class="section">
+      <div class="sliders">
+        <div class="range-slider">
+          <span class="band">1k</span>
+          <input type="range" oninput={_equalizer.handleChange(event)} class="vertical default" min="-1000" max="1000" value="0">
+          <span class="band band-range">-1k</span>
+          <span class="param">Hz</span>
+        </div>
       </div>
     </div>
-  </div>
-
-</div>
+    <div class="section">
+      <div class="sliders">
+        <div class="range-slider">
+          <span class="band">6k</span>
+          <input type="range" oninput={_equalizer.handleChange(event)} class="vertical default" min="-60000" max="60000" value="0">
+          <span class="band band-range">-6k</span>
+          <span class="param">Hz</span>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="sliders">
+        <div class="range-slider">
+          <span class="band">16k</span>
+          <input type="range" oninput={_equalizer.handleChange(event)} class="vertical default" min="-16000" max="16000" value="0">
+          <span class="band band-range">-16k</span>
+          <span class="param">Hz</span>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="dropdown">
+      <button onclick="_equalizer.toggleDropdown()" class="dropbtn">Presets</button>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="#" onclick={_equalizer.applyPreset(event)}>Equalize</a>
+          <a href="#" onclick={_equalizer.applyPreset(event)}>Rock</a>
+          <a href="#" onclick={_equalizer.applyPreset(event)}>Pop</a>
+          <a href="#" onclick={_equalizer.applyPreset(event)}>Jazz</a>
+          <a href="#" onclick={_equalizer.applyPreset(event)}>Classical</a>
+        </div>
+      </div>
+  </body>
+</html>
