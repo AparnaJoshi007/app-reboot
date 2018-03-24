@@ -2,7 +2,7 @@ body {
   flex-direction: column;
   font-family: sans-serif;
   margin: 0;
-  background: linear-gradient(-65deg, #43C6AC, #F8FFAE);
+  background: linear-gradient(to right, rgb(0, 201, 255), rgb(146, 254, 157))
 }
 .equalizer {
   display: flex;

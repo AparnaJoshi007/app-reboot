@@ -4,7 +4,7 @@ function Equalizer() {
     var min = e.target.min;
     var max = e.target.max;
     e.target.className = this.getClassName(value, min, max);
-  }
+  };
 
   this.getClassName = function(value, min, max) {
     var mid = max / 3;
@@ -15,12 +15,12 @@ function Equalizer() {
     } else {
       return("vertical max");
     }
-  }
+  };
 
 
   this.toggleDropdown = function() {
     document.getElementById("myDropdown").classList.toggle("show");
-  }
+  };
 
   this.applyPreset = function(e) {
     var equalizerRange = document.querySelectorAll('input[type=range]');
@@ -34,25 +34,25 @@ function Equalizer() {
       case 'Pop':   equalizerRange.forEach(function(range, index) {
                       range.value = range.min * (index+1) / (index+2) + 40;
                       range.className = this.getClassName(range.value, range.min, range.max);
-                    }.bind(this))
+                    }.bind(this));
                     break;
       case 'Jazz':  equalizerRange.forEach(function(range, index) {
                       range.value = range.min / (index+1) + 10;
                       range.className = this.getClassName(range.value, range.min, range.max);
-                    }.bind(this))
+                    }.bind(this));
                     break;
       case 'Classical': equalizerRange.forEach(function(range, index) {
                         range.value = range.max * (index+1) / (index+2) - 40;
                         range.className = this.getClassName(range.value, range.min, range.max);
-                      }.bind(this))
+                      }.bind(this));
                     break;
       default: equalizerRange.forEach(function(range, index) {
                         range.value = 0;
                         range.className = this.getClassName(range.value, range.min, range.max);
-                      }.bind(this))
+                      }.bind(this));
                     break;
     }
-  }
+  };
 }
 
 var _equalizer = new Equalizer();
