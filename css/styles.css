@@ -104,6 +104,95 @@ input[type=range].vertical.max::-webkit-slider-thumb {
   margin-top: -5px;
 }
 
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 6px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: #D8D8D8;
+  border-radius: 3px;
+  border: none;
+}
+input[type=range].vertical.default::-moz-range-thumb {
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.32);
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 8px;
+  background: #f8ffae;
+  cursor: pointer;
+}
+input[type=range].vertical.min::-moz-range-thumb {
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.32);
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 8px;
+  background: #44bfa3;
+  cursor: pointer;
+}
+input[type=range].vertical.max::-moz-range-thumb {
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.32);
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 8px;
+  background: #ff3232;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 6px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #D8D8D8;
+  border: none;
+  border-radius: 6px;
+}
+input[type=range]::-ms-fill-upper {
+  background: #D8D8D8;
+  border: none;
+  border-radius: 6px;
+}
+input[type=range].vertical.default::-ms-thumb {
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.32);
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 8px;
+  background: #f8ffae;
+  cursor: pointer;
+}
+input[type=range].vertical.min::-ms-thumb {
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.32);
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 8px;
+  background: #44BFA3;
+  cursor: pointer;
+}
+input[type=range].vertical.max::-ms-thumb {
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.32);
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 8px;
+  background: #ff3232;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #D8D8D8;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #D8D8D8;
+}
+
 .dropbtn {
     background-color: rgba(0, 0, 0, 0.62);
     color: white;
